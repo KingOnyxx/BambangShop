@@ -65,11 +65,11 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement unsubscribe function in Notification controller.`
     -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
-    -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
-    -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
-    -   [ ] Commit: `Implement publish function in Program service and Program controller.`
-    -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [x] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
+    -   [x] Commit: `Implement notify function in Notification service to notify each Subscriber.`
+    -   [x] Commit: `Implement publish function in Program service and Program controller.`
+    -   [x] Commit: `Edit Product service methods to call notify after create/delete.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -87,3 +87,12 @@ This is the place for you to write reflections:
 3. Postman is a powerful tool for testing API endpoints. It allows you to send various types of HTTP requests (GET, POST, PUT, DELETE, etc.) to the API and view the responses in real-time, which can greatly speed up the development and debugging process. Some of the features in Postman that could be helpful for Group Project or future software engineering projects because it can group related requests together for better organization and collaboration, define variables that can be used across multiple requests, making it easier to manage common values like API base URLs or authentication tokens. I can write tests for API responses and automate these tests to run on different stages of development workflow. Postman can automatically generate and update API documentation, making it easier to share your API with others.
 
 #### Reflection Publisher-3
+1. This tutorial case uses the Push model of the Observer Pattern, where the publisher is responsible for sending notifications to the subscribers.
+2. Pull model
+Advantages of Pull Model:
+ - On-Demand Updates: Subscribers can request updates when needed, reducing unnecessary data transmission.
+ - Control Over Data: Subscribers have more control over the timing and amount of data they receive.
+Disadvantages of Pull Model:
+ - Increased Complexity: Subscribers need to implement a mechanism to check for updates, adding complexity.
+ - Potential Delays: Updates are not real-time, which may lead to delays in receiving important information.
+3. Without Multi-Threading, The notification process would become a bottleneck, potentially slowing down the system as it handles each notification sequentially. Also, The system’s responsiveness to publish notifications could be significantly reduced, affecting the user experience.
