@@ -58,12 +58,12 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement delete function in Subscriber repository.`
     -   [x] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [x] Commit: `Create Notification service struct skeleton.`
+    -   [x] Commit: `Implement subscribe function in Notification service.`
+    -   [x] Commit: `Implement subscribe function in Notification controller.`
+    -   [x] Commit: `Implement unsubscribe function in Notification service.`
+    -   [x] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -82,5 +82,8 @@ This is the place for you to write reflections:
 3. Thread Safety - DashMap vs Singleton Pattern: In Rust, the DashMap library provides a thread-safe HashMap which is useful when you have multiple threads that might be reading and writing to the SUBSCRIBERS variable concurrently. The Singleton pattern ensures that a class has only one instance and provides a global point of access to it. However, it doesn’t inherently provide thread safety. If you want to ensure both that there’s only one instance of the list of subscribers and that it’s thread-safe, you could use a Singleton pattern to create the list and still use DashMap for the list to ensure thread safety. But if thread safety is not a concern, a regular HashMap could be used.
 
 #### Reflection Publisher-2
+1. The separation of “Service” and “Repository” from a Model is based on the principle of Single Responsibility and Separation of Concerns. In a complex application, the Model can become bloated if it’s responsible for both data storage and business logic. The Repository handles the data storage, making it easier to manage data persistence and retrieval, and allowing for potential optimizations related to data access. The Service handles the business logic, making it easier to manage and test the application’s behavior. This improves the modularity and maintainability of the code, as changes in data storage implementation or business logic can be made independently without affecting each other.
+2. If we only use the Model without separating “Service” and “Repository”, the interactions between each model (Program, Subscriber, Notification) could significantly increase the code complexity. Each model would need to handle its own data storage and business logic, leading to potential code duplication and making the code harder to maintain and test. It could also make it more difficult to ensure data consistency and integrity across models.
+3. Postman is a powerful tool for testing API endpoints. It allows you to send various types of HTTP requests (GET, POST, PUT, DELETE, etc.) to the API and view the responses in real-time, which can greatly speed up the development and debugging process. Some of the features in Postman that could be helpful for Group Project or future software engineering projects because it can group related requests together for better organization and collaboration, define variables that can be used across multiple requests, making it easier to manage common values like API base URLs or authentication tokens. I can write tests for API responses and automate these tests to run on different stages of development workflow. Postman can automatically generate and update API documentation, making it easier to share your API with others.
 
 #### Reflection Publisher-3
