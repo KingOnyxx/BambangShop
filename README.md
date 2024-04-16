@@ -48,15 +48,15 @@ You can install Postman via this website: https://www.postman.com/downloads/
     (You might want to use `cargo check` if you only need to verify your work without running the app.)
 
 ## Mandatory Checklists (Publisher)
--   [ ] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
+-   [x] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
 -   **STAGE 1: Implement models and repositories**
-    -   [ ] Commit: `Create Subscriber model struct.`
-    -   [ ] Commit: `Create Notification model struct.`
-    -   [ ] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
-    -   [ ] Commit: `Implement add function in Subscriber repository.`
-    -   [ ] Commit: `Implement list_all function in Subscriber repository.`
-    -   [ ] Commit: `Implement delete function in Subscriber repository.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
+    -   [x] Commit: `Create Subscriber model struct.`
+    -   [x] Commit: `Create Notification model struct.`
+    -   [x] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
+    -   [x] Commit: `Implement add function in Subscriber repository.`
+    -   [x] Commit: `Implement list_all function in Subscriber repository.`
+    -   [x] Commit: `Implement delete function in Subscriber repository.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
     -   [ ] Commit: `Create Notification service struct skeleton.`
     -   [ ] Commit: `Implement subscribe function in Notification service.`
@@ -77,6 +77,9 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. Observer Pattern and Interface/Trait: In the Observer pattern, the Subscriber is often defined as an interface (or a trait in Rust) to allow for multiple concrete implementations. This provides flexibility as it allows any object that implements the Subscriber interface to be an observer.
+2. Unique id and url - Vec vs DashMap: If id in Program and url in Subscriber are intended to be unique, using a DashMap (or a HashMap in general) would be more efficient than a Vec (or a list). This is because lookup, insertion, and deletion operations in a HashMap are generally faster (average time complexity of O(1)) than in a list (average time complexity of O(n)). So, if you frequently need to check for uniqueness or look up subscribers by id or url, DashMap would be a better choice.
+3. Thread Safety - DashMap vs Singleton Pattern: In Rust, the DashMap library provides a thread-safe HashMap which is useful when you have multiple threads that might be reading and writing to the SUBSCRIBERS variable concurrently. The Singleton pattern ensures that a class has only one instance and provides a global point of access to it. However, it doesn’t inherently provide thread safety. If you want to ensure both that there’s only one instance of the list of subscribers and that it’s thread-safe, you could use a Singleton pattern to create the list and still use DashMap for the list to ensure thread safety. But if thread safety is not a concern, a regular HashMap could be used.
 
 #### Reflection Publisher-2
 
